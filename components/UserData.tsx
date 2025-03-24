@@ -19,7 +19,7 @@ const UserData = () => {
             setIp(ipData.ip);
 
             // Fetch location details using the obtained IP via ip-api
-            const locResponse = await fetch(`http://ip-api.com/json/${ipData.ip}`);
+            const locResponse = await fetch(`https://ip-api.com/json/${ipData.ip}`);
             const locData = await locResponse.json();
             setLocationData(locData);
         } catch (err: any) {
