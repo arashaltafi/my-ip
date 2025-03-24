@@ -16,7 +16,7 @@ const Map = (props: LocationData) => {
     return (
         <div className="w-full max-w-md h-96">
             <MapContainer
-                center={[props.lat, props.lon]}
+                center={[props.latitude, props.longitude]}
                 zoom={13}
                 scrollWheelZoom={true}
                 attributionControl={false}
@@ -26,7 +26,7 @@ const Map = (props: LocationData) => {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <Marker position={[props.lat, props.lon]} icon={customIcon}>
+                <Marker position={[props.latitude, props.longitude]} icon={customIcon}>
                     <Popup>
                         {props.city}, {props.country}
                     </Popup>

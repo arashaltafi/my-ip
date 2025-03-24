@@ -1,11 +1,19 @@
 export interface LocationData {
+    ip: string;
+    success: boolean;
+    type: string;
+    continent: string;
+    continent_code: string;
     country: string;
-    regionName: string;
+    country_code: string;
+    region: string;
+    region_code: string;
     city: string;
-    zip: string;
-    lat: number;
-    lon: number;
-    timezone: string;
-    isp: string;
-    query: string;
+    latitude: number;
+    longitude: number;
+    is_eu: boolean;
+    postal: string;
+    calling_code: string;
+    capital: string;
+    borders: string;
 }

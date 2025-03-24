@@ -19,7 +19,7 @@ const UserData = () => {
             setIp(ipData.ip);
 
             // Fetch location details using the obtained IP via ip-api
-            const locResponse = await fetch(`https://ip-api.com/json/${ipData.ip}`);
+            const locResponse = await fetch(`https://ipwho.is/${ipData.ip}`);
             const locData = await locResponse.json();
             setLocationData(locData);
         } catch (err: any) {
@@ -48,14 +48,21 @@ const UserData = () => {
                             {
                                 locationData && (
                                     <>
+                                        <p><strong>Type:</strong> {locationData.type}</p>
+                                        <p><strong>Continent:</strong> {locationData.continent}</p>
+                                        <p><strong>ContinentCode:</strong> {locationData.continent_code}</p>
                                         <p><strong>Country:</strong> {locationData.country}</p>
-                                        <p><strong>Region:</strong> {locationData.regionName}</p>
+                                        <p><strong>CountryCode:</strong> {locationData.country_code}</p>
+                                        <p><strong>Region:</strong> {locationData.region}</p>
+                                        <p><strong>RegionCode:</strong> {locationData.region_code}</p>
                                         <p><strong>City:</strong> {locationData.city}</p>
-                                        <p><strong>ZIP:</strong> {locationData.zip}</p>
-                                        <p><strong>Latitude:</strong> {locationData.lat}</p>
-                                        <p><strong>Longitude:</strong> {locationData.lon}</p>
-                                        <p><strong>Timezone:</strong> {locationData.timezone}</p>
-                                        <p><strong>ISP:</strong> {locationData.isp}</p>
+                                        <p><strong>Latitude:</strong> {locationData.latitude}</p>
+                                        <p><strong>Longitude:</strong> {locationData.longitude}</p>
+                                        <p><strong>IsEu:</strong> {locationData.is_eu}</p>
+                                        <p><strong>postal:</strong> {locationData.postal}</p>
+                                        <p><strong>CallingCode:</strong> {locationData.calling_code}</p>
+                                        <p><strong>Capital:</strong> {locationData.capital}</p>
+                                        <p><strong>Borders:</strong> {locationData.borders}</p>
                                     </>
                                 )
                             }
